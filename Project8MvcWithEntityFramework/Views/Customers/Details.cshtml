@@ -1,0 +1,58 @@
+﻿@model Project8MvcWithEntityFramework.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 style="text-align:center; background-color:aliceblue;font-size:40px;">Customer Details</h2>
+
+<div>
+    <h4>Customer</h4>
+    <hr />
+    @using (Html.BeginForm())
+    {
+
+        <h4>Customer</h4>
+        <hr />
+        <table>
+            <tr>
+                <th>@Html.LabelFor(m => m.Art.Arts)</th>
+                <td>@Html.DisplayFor(m => m.Art.Arts)</td>
+            </tr>
+            <tr>
+                <th>@Html.LabelFor(m => m.Artist.ArtistName)</th>
+                <td>@Html.DisplayFor(m => m.Artist.ArtistName)</td>
+            </tr>
+            <tr>
+                <th>@Html.LabelFor(m => m.CustomerName)</th>
+                <td>@Html.DisplayFor(m => m.CustomerName)</td>
+            </tr>
+            <tr>
+                <th>@Html.LabelFor(m => m.CustomerType)</th>
+                <td>@Html.DisplayFor(m => m.CustomerType)</td>
+            </tr>
+            <tr>
+                <th>@Html.LabelFor(m => m.Price)</th>
+                <td>@Html.DisplayFor(m => m.Price)</td>
+            </tr>
+        </table>
+
+    }
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+<div style="font-family:Arial">
+    @Ajax.ActionLink("List", "Index", new AjaxOptions
+{
+    HttpMethod = "GET",
+    UpdateTargetId = "DivDetails",
+    InsertionMode = InsertionMode.InsertAfter
+})
+    <div id="DivDetails">
+
+    </div>
+</div>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>

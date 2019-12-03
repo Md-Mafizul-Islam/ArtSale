@@ -1,0 +1,29 @@
+﻿@model  Project8MvcWithEntityFramework.Models.User
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2 style="text-align:center; background-color:aliceblue;font-size:40px;"> Registation</h2>
+@using(Html.BeginForm()){
+<table>
+    <tr>
+        <th>@Html.LabelFor(s => s.UserName)</th>
+        <td>@Html.TextBoxFor(model => model.UserName)</td>
+
+    </tr>
+    <tr>
+        <th>@Html.LabelFor(s=>s.Password)</th>
+       <td>@Html.TextBoxFor(model => model.Password)</td>
+    </tr>
+    <tr>
+        <th>@Html.LabelFor(s => s.Role)</th>
+        <td>@Html.TextBoxFor(model => model.Role)</td>
+    </tr>
+    <tr>
+        <td><input type="submit" value="Submit"/></td>
+    </tr>
+</table>
+}
+
+
+

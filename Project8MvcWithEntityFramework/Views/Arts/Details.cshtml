@@ -1,0 +1,25 @@
+﻿@model Project8MvcWithEntityFramework.Models.Art
+
+@{
+    ViewBag.Title = "Details";
+}
+<h2 style="text-align:center; background-color:aliceblue;font-size:40px;">Art Details</h2>
+
+<div>
+    <h4>Art</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Arts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Arts)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ArtID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,51 @@
+﻿@model Project8MvcWithEntityFramework.Models.Customer
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <table>
+        <tr>
+            <th>@Html.LabelFor(s => s.ArtistID)</th>
+            <td>@Html.DropDownListFor(s => s.ArtistID, new SelectList(ViewBag.Artist, "ArtistID", "ArtistName"), "Select Artist")</td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(s => s.ArtID)</th>
+            <td>@Html.DropDownListFor(s => s.ArtID, new SelectList(ViewBag.Art, "ArtID", "Arts"), "Select Art"))</td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(s => s.CustomerName)</th>
+            <td>@Html.TextBoxFor(s => s.CustomerName)</td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(s => s.CustomerType)</th>
+            <td>@Html.TextBoxFor(s => s.CustomerType)</td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(s => s.Price)</th>
+            <td>@Html.TextBoxFor(s => s.Price)</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Update" class="btn btn-default" />
+            </td>
+
+        </tr>
+
+    </table>
+
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
